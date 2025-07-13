@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News_Ninjas-Audio_Input</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="homepage.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="faqs.html" class="nav-link">FAQs</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <div class="logo">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M432 96c26.5 0 48-21.5 48-48S458.5 0 432 0s-48 21.5-48 48 21.5 48 48 48zm-48 128c0-53-43-96-96-96s-96 43-96 96 43 96 96 96 96-43 96-96zM144 328c0-39.8-32.2-72-72-72S0 288.2 0 328s32.2 72 72 72 72-32.2 72-72zm0-144c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm256 0c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm-72 332h-96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM112 416c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48-21.5-48-48-48zm0-64c-53 0-96 43-96 96s43 96 96 96 96-43 96-96-43-96-96-96z"/>
+            </svg>
+            News Ninjas
+        </div>
+        <div class="tagline">Slicing Through Misinformation</div>
+    </div>
+
+    <div class="container">
+        <div class="audio-analysis-section">
+            <div class="ninja-section-title">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M256 32C114.52 32 0 146.496 0 288v48a32 32 0 0 0 17.689 28.622l14.383 7.191C34.083 431.903 83.421 480 144 480h24c13.255 0 24-10.745 24-24V280c0-13.255-10.745-24-24-24h-24c-31.342 0-59.671 12.879-80 33.627V288c0-105.869 86.131-192 192-192s192 86.131 192 192v1.627C427.671 268.879 399.342 256 368 256h-24c-13.255 0-24 10.745-24 24v176c0 13.255 10.745 24 24 24h24c60.579 0 109.917-48.098 111.928-108.187l14.382-7.191A32 32 0 0 0 512 336v-48c0-141.479-114.496-256-256-256z"/>
+                </svg>
+                <h1>Audio Ninja Analysis</h1>
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M256 32C114.52 32 0 146.496 0 288v48a32 32 0 0 0 17.689 28.622l14.383 7.191C34.083 431.903 83.421 480 144 480h24c13.255 0 24-10.745 24-24V280c0-13.255-10.745-24-24-24h-24c-31.342 0-59.671 12.879-80 33.627V288c0-105.869 86.131-192 192-192s192 86.131 192 192v1.627C427.671 268.879 399.342 256 368 256h-24c-13.255 0-24 10.745-24 24v176c0 13.255 10.745 24 24 24h24c60.579 0 109.917-48.098 111.928-108.187l14.382-7.191A32 32 0 0 0 512 336v-48c0-141.479-114.496-256-256-256z"/>
+                </svg>
+            </div>
+            
+            <p>Let our audio ninjas analyze spoken content to detect misinformation. 
+                Upload an audio file or record your voice directly.</p>
+            
+            <div class="audio-options">
+                <div class="option-card">
+                    <h3>Upload Audio File</h3>
+                    <div class="file-input-container">
+                        <input type="file" id="audio-file" accept="audio/*" class="file-input">
+                        <label for="audio-file" class="file-label">
+                            <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm65.18 216.01H224v80c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-80H94.82c-14.28 0-21.41-17.29-11.27-27.36l96.42-95.7c6.65-6.61 17.39-6.61 24.04 0l96.42 95.7c10.15 10.07 3.03 27.36-11.25 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"/>
+                            </svg>
+                            Choose Audio File
+                        </label>
+                        <span id="file-name">No file chosen</span>
+                    </div>
+                    <button type="button" id="upload-btn" class="btn btn-primary" disabled>
+                        Transcribe Audio
+                    </button>
+                </div>
+                
+                <div class="option-card">
+                    <h3>Record Audio</h3>
+                    <div class="record-controls">
+                        <button id="record-btn" class="btn btn-record">
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm96-280v160c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h160c8.8 0 16 7.2 16 16z"/>
+                            </svg>
+                            Start Recording
+                        </button>
+                        <button id="stop-btn" class="btn btn-stop" disabled>
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm96-280v160c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h160c8.8 0 16 7.2 16 16z"/>
+                            </svg>
+                            Stop Recording
+                        </button>
+                        <div class="record-status">
+                            <span id="timer">00:00</span>
+                            <div id="record-indicator" class="record-indicator"></div>
+                        </div>
+                        <button id="transcribe-recording-btn" class="btn btn-primary" disabled>
+                            Transcribe Recording
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="transcription-section" id="transcription-container" style="display: none;">
+                <h3>Text Transcription</h3>
+                <div class="loading" id="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Our ninjas are transcribing your audio...</p>
+                </div>
+                
+                <div id="transcription-form-container" style="display: none;">
+                    <form id="transcription-form" action="/arraymaker" method="POST">
+                        <div class="form-group">
+                            <label for="texti">Transcribed Text:</label>
+                            <textarea id="texti" name="texti" class="transcription-textarea" rows="8"></textarea>
+                        </div>
+                        <p class="edit-note">You can edit the text if needed before submitting.</p>
+                        <button type="submit" class="btn btn-submit">Submit for Analysis</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Improved Audio Processing and Transcription Code
+
+const audioFileInput = document.getElementById('audio-file');
+const fileNameDisplay = document.getElementById('file-name');
+const uploadBtn = document.getElementById('upload-btn');
+const recordBtn = document.getElementById('record-btn');
+const stopBtn = document.getElementById('stop-btn');
+const transcribeRecordingBtn = document.getElementById('transcribe-recording-btn');
+const timer = document.getElementById('timer');
+const recordIndicator = document.getElementById('record-indicator');
+const transcriptionContainer = document.getElementById('transcription-container');
+const loadingSpinner = document.getElementById('loading-spinner');
+const transcriptionFormContainer = document.getElementById('transcription-form-container');
+const transcriptionTextarea = document.getElementById('texti');
+
+let mediaRecorder;
+let audioChunks = [];
+let recordingTime = 0;
+let timerInterval;
+let audioBlob;
+
+// File Upload Handling
+audioFileInput.addEventListener('change', function () {
+    if (this.files && this.files[0]) {
+        fileNameDisplay.textContent = this.files[0].name;
+        uploadBtn.disabled = false;
+    } else {
+        fileNameDisplay.textContent = 'No file chosen';
+        uploadBtn.disabled = true;
+    }
+});
+
+uploadBtn.addEventListener('click', () => {
+    if (audioFileInput.files && audioFileInput.files[0]) {
+        processAudio(audioFileInput.files[0]);
+    }
+});
+
+// Recording Functionality
+recordBtn.addEventListener('click', async () => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = [];
+
+        mediaRecorder.addEventListener('dataavailable', event => {
+            audioChunks.push(event.data);
+        });
+
+        mediaRecorder.addEventListener('stop', () => {
+            audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            transcribeRecordingBtn.disabled = false;
+        });
+
+        mediaRecorder.start(); // Start recording
+        updateUIForRecording(true);
+    } catch (error) {
+        console.error('Error accessing microphone:', error);
+        alert('Could not access microphone. Please ensure you have granted permission.');
+    }
+});
+
+stopBtn.addEventListener('click', () => {
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+        mediaRecorder.stream.getTracks().forEach(track => track.stop());
+        updateUIForRecording(false);
+    }
+});
+
+transcribeRecordingBtn.addEventListener('click', () => {
+    if (audioBlob) {
+        processAudio(audioBlob);
+    }
+});
+
+// Update UI for Recording
+function updateUIForRecording(isRecording) {
+    recordBtn.disabled = isRecording;
+    stopBtn.disabled = !isRecording;
+    recordIndicator.classList.toggle('recording', isRecording);
+
+    if (isRecording) {
+        recordingTime = 0;
+        updateTimerDisplay();
+        timerInterval = setInterval(updateTimer, 1000);
+    } else {
+        clearInterval(timerInterval);
+    }
+}
+
+// Timer Functions
+function updateTimer() {
+    recordingTime++;
+    updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(recordingTime / 60).toString().padStart(2, '0');
+    const seconds = (recordingTime % 60).toString().padStart(2, '0');
+    timer.textContent = `${minutes}:${seconds}`;
+}
+
+// Process Audio (Uploaded or Recorded)
+async function processAudio(audioData) {
+    showLoadingSpinner();
+
+    try {
+        const transcription = await transcribeAudio(audioData);
+        transcriptionTextarea.value = transcription;
+        showTranscriptionForm();
+    } catch (error) {
+        console.error('Error processing audio:', error);
+        alert('Failed to transcribe audio. Please try again.');
+        showTranscriptionForm();
+    }
+}
+
+// Transcribe Audio
+async function transcribeAudio(audioData) {
+    return new Promise((resolve, reject) => {
+        try {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                reject('Speech recognition not supported in this browser.');
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            const audioURL = URL.createObjectURL(audioData);
+            const audioElement = new Audio(audioURL);
+
+            let finalTranscript = '';
+
+            recognition.onresult = event => {
+                finalTranscript = Array.from(event.results)
+                    .map(result => result[0].transcript)
+                    .join(' ');
+            };
+
+            recognition.onerror = event => {
+                reject(event.error);
+            };
+
+            recognition.onend = () => {
+                resolve(finalTranscript);
+            };
+
+            audioElement.onplay = () => {
+                recognition.start();
+            };
+
+            audioElement.onended = () => {
+                recognition.stop();
+            };
+
+            audioElement.play();
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+// Show Loading Spinner
+function showLoadingSpinner() {
+    transcriptionContainer.style.display = 'block';
+    loadingSpinner.style.display = 'block';
+    transcriptionFormContainer.style.display = 'none';
+}
+
+// Show Transcription Form
+function showTranscriptionForm() {
+    loadingSpinner.style.display = 'none';
+    transcriptionFormContainer.style.display = 'block';
+}
+
+// Form Submission Validation
+document.getElementById('transcription-form').addEventListener('submit', function (e) {
+    const transcriptionText = transcriptionTextarea.value.trim();
+    if (!transcriptionText) {
+        e.preventDefault();
+        alert('Please ensure there is text in the transcription box before submitting.');
+    }
+});
+    </script>
+</body>
+</html>

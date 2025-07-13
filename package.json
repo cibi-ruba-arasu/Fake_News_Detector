@@ -1,0 +1,24 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google-cloud/speech": "^7.0.1",
+    "@google/genai": "^0.8.0",
+    "axios": "^1.8.4",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "speech-to-text": "^2.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

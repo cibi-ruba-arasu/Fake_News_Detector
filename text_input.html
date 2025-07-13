@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Ninjas - Text Input</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #f5f5f5;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23383838' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .header {
+            background-color: #e60012;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            border-bottom: 4px solid #000;
+        }
+        .header:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            border-left: 4px solid #e60012;
+            border-right: 4px solid #e60012;
+            position: relative;
+        }
+        .container:before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #444;
+            pointer-events: none;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 3px 3px 0px #000;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .form-title svg {
+            width: 24px;
+            height: 24px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #e60012;
+        }
+        .required:after {
+            content: " *";
+            color: #e60012;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #444;
+            border-radius: 4px;
+            background-color: #1c1c1c;
+            color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+        textarea:focus, input:focus {
+            outline: none;
+            border-color: #e60012;
+            box-shadow: 0 0 5px rgba(230,0,18,0.5);
+        }
+        .btn {
+            background-color: #333;
+            color: white;
+            border: 2px solid #e60012;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            width: 200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        .btn:hover:before {
+            left: 100%;
+        }
+        .btn:hover {
+            background-color: #e60012;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(230,0,18,0.4);
+        }
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+        .helper-text {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .shuriken {
+            position: absolute;
+            opacity: 0.1;
+        }
+        .shuriken-1 {
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            transform: rotate(20deg);
+        }
+        .shuriken-2 {
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <!-- Ninja Mask Icon -->
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M432 96c26.5 0 48-21.5 48-48S458.5 0 432 0s-48 21.5-48 48 21.5 48 48 48zm-48 128c0-53-43-96-96-96s-96 43-96 96 43 96 96 96 96-43 96-96zM144 328c0-39.8-32.2-72-72-72S0 288.2 0 328s32.2 72 72 72 72-32.2 72-72zm0-144c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm256 0c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm-72 332h-96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM112 416c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48-21.5-48-48-48zm0-64c-53 0-96 43-96 96s43 96 96 96 96-43 96-96-43-96-96-96z"/>
+            </svg>
+            News Ninjas
+        </div>
+        <div class="tagline">Slicing Through Misinformation</div>
+    </div>
+
+    <div class="container">
+        <!-- Shuriken Background Elements -->
+        <svg class="shuriken shuriken-1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M478.21 334.093L336 256l142.21-78.093c11.795-6.477 15.961-21.384 9.232-33.037l-19.48-33.741c-6.728-11.653-21.72-15.499-33.227-8.523L296 186.718l3.475-162.204C299.763 11.061 288.937 0 275.48 0h-38.96c-13.456 0-24.283 11.061-23.994 24.514L216 186.718 77.265 102.607c-11.506-6.976-26.499-3.13-33.227 8.523l-19.48 33.741c-6.728 11.653-2.562 26.56 9.233 33.037L176 256 33.79 334.093c-11.795 6.477-15.961 21.384-9.232 33.037l19.48 33.741c6.728 11.653 21.721 15.499 33.227 8.523L216 325.282l-3.475 162.204C212.237 500.939 223.064 512 236.52 512h38.961c13.456 0 24.283-11.061 23.995-24.514L296 325.282l138.735 84.111c11.506 6.976 26.499 3.13 33.227-8.523l19.48-33.741c6.728-11.653 2.563-26.559-9.232-33.036z"/>
+        </svg>
+        <svg class="shuriken shuriken-2" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M478.21 334.093L336 256l142.21-78.093c11.795-6.477 15.961-21.384 9.232-33.037l-19.48-33.741c-6.728-11.653-21.72-15.499-33.227-8.523L296 186.718l3.475-162.204C299.763 11.061 288.937 0 275.48 0h-38.96c-13.456 0-24.283 11.061-23.994 24.514L216 186.718 77.265 102.607c-11.506-6.976-26.499-3.13-33.227 8.523l-19.48 33.741c-6.728 11.653-2.562 26.56 9.233 33.037L176 256 33.79 334.093c-11.795 6.477-15.961 21.384-9.232 33.037l19.48 33.741c6.728 11.653 21.721 15.499 33.227 8.523L216 325.282l-3.475 162.204C212.237 500.939 223.064 512 236.52 512h38.961c13.456 0 24.283-11.061 23.995-24.514L296 325.282l138.735 84.111c11.506 6.976 26.499 3.13 33.227-8.523l19.48-33.741c6.728-11.653 2.563-26.559-9.232-33.036z"/>
+        </svg>
+
+        <div class="form-title">
+            <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M594.53 508.63L6.18 53.9c-6.97-5.42-8.23-15.47-2.81-22.45L23.62 8.81c5.42-6.97 15.47-8.23 22.45-2.81l588.36 454.73c6.97 5.42 8.23 15.47 2.81 22.45l-20.26 22.64c-5.41 6.98-15.46 8.23-22.45 2.81z"/>
+                <path fill="currentColor" d="M384 121.9c0-6.3-2.5-12.4-7-16.9L330.2 59c-4.5-4.5-10.6-7-17-7H208c-13.3 0-24 10.7-24 24v96h-52.79c-13.3 0-24 10.7-24 24v24c0 13.3 10.7 24 24 24H384c13.3 0 24-10.7 24-24v-24c0-13.3-10.7-24-24-24h-8V121.9z"/>
+                <path fill="currentColor" d="M592 0H208c-8.8 0-16 7.2-16 16v16h16c17.7 0 32 14.3 32 32v352c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V384h112v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V144h32v224c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V96c0-53-43-96-96-96zm32 96c0 8.8-7.2 16-16 16s-16-7.2-16-16 7.2-16 16-16 16 7.2 16 16z"/>
+            </svg>
+            <h1>Analyze News Text</h1>
+            <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M594.53 508.63L6.18 53.9c-6.97-5.42-8.23-15.47-2.81-22.45L23.62 8.81c5.42-6.97 15.47-8.23 22.45-2.81l588.36 454.73c6.97 5.42 8.23 15.47 2.81 22.45l-20.26 22.64c-5.41 6.98-15.46 8.23-22.45 2.81z"/>
+                <path fill="currentColor" d="M384 121.9c0-6.3-2.5-12.4-7-16.9L330.2 59c-4.5-4.5-10.6-7-17-7H208c-13.3 0-24 10.7-24 24v96h-52.79c-13.3 0-24 10.7-24 24v24c0 13.3 10.7 24 24 24H384c13.3 0 24-10.7 24-24v-24c0-13.3-10.7-24-24-24h-8V121.9z"/>
+                <path fill="currentColor" d="M592 0H208c-8.8 0-16 7.2-16 16v16h16c17.7 0 32 14.3 32 32v352c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V384h112v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V144h32v224c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V96c0-53-43-96-96-96zm32 96c0 8.8-7.2 16-16 16s-16-7.2-16-16 7.2-16 16-16 16 7.2 16 16z"/>
+            </svg>
+        </div>
+
+        <form action="/arraymaker" method="post">
+            <div class="form-group">
+                <label for="texti" class="required">News Text</label>
+                <textarea id="texti" name="texti" placeholder="Paste or type the news text you want to analyze(be specific for accurate results)..." required></textarea>
+                <div class="helper-text">Enter the full text of the news article or claim you want to analyze.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="yr">Year (Optional)</label>
+                <input type="number" id="yr" name="yr" placeholder="e.g., 2023" min="1900" max="2025" step="1">
+                <div class="helper-text">Specify the year when this news might have occurred (1900-2025).</div>
+            </div>
+
+            <button type="submit" class="btn">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/>
+                </svg>
+                Analyze
+            </button>
+        </form>
+    </div>
+</body>
+</html>
