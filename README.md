@@ -7,4 +7,4 @@ I should not mention my API keys publically like this yet i want ppl to try my s
 
 USE IT... Just not for your personal use 👍
 
-add it to your favourites peeps
+Star my project peeps
